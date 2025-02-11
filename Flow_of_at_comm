@@ -1,0 +1,73 @@
+    send_command(hSerial, "AT");                  // Test communication
+    read_response(hSerial);
+
+    send_command(hSerial,"AT+CREG?");               // ignore the /" in at commands if implementing in mplab code 
+    read_response(hSerial);                         //
+
+    send_command(hSerial,"AT+CSQ");
+    read_response(hSerial);
+
+    send_command(hSerial,"AT+COPS=0");
+    read_response(hSerial);
+    // Close serial port
+    send_command(hSerial,"AT+CSTT=\"www\",\"\",\"\"");
+    read_response(hSerial);
+
+    send_command(hSerial,"AT+CGATT=1");
+    read_response(hSerial);
+
+    send_command(hSerial,"AT+CGACT=1");
+    read_response(hSerial);
+    
+    send_command(hSerial,"AT+CGACT?");
+    read_response(hSerial);
+
+    send_command(hSerial,"AT+CIICR");
+    read_response(hSerial);
+
+    send_command(hSerial,"AT+CIFSR");
+    read_response(hSerial);
+
+    send_command(hSerial,"AT+CGDCONT?");
+    read_response(hSerial);
+    
+    send_command(hSerial,"AT+SAPBR=0,1");
+    read_response(hSerial);
+
+    send_command(hSerial,"AT+SAPBR=1,1");
+    read_response(hSerial);
+
+    send_command(hSerial,"AT+SAPBR=3,1,\"CONTYPE\",\"GPRS\"");
+    read_response(hSerial);
+
+    send_command(hSerial,"AT+SAPBR=3,1,\"APN\",\"www\"");
+    read_response(hSerial);
+
+    send_command(hSerial,"AT+SAPBR=2,1");
+    read_response(hSerial);
+
+    send_command(hSerial,"AT+HTTPTERM");
+    read_response(hSerial);
+
+    send_command(hSerial,"AT+HTTPINIT");
+    read_response(hSerial);
+
+    send_command(hSerial,"AT+HTTPPARA=\"URL\",\"http://localhost:8080/api/v1/events\"");
+    read_response(hSerial);
+
+    send_command(hSerial,"AT+HTTPPARA=\"CONTENT\",\"application/json\"");
+    read_response(hSerial);
+
+    
+    send_command(hSerial,"AT+HTTPACTION=0");
+    Sleep(1000);
+    read_response(hSerial);
+
+
+    
+
+    
+
+    send_command(hSerial,"AT+HTTPREAD");
+    read_response(hSerial);
+    read_response(hSerial);
